@@ -4,6 +4,8 @@ This repository provides a thesis template built on a custom class file, `styles
 
 Most of the template text includes placeholders in `{brackets}`. Replace those with your own content.
 
+<a href="https://github.com/0r/Three-Manuscript-Thesis-LaTeX-Template/raw/main/Three_Manuscript_Thesis_LaTeX_Template.pdf" target="_blank">View the PDF version of the template</a>
+
 ## Quick start
 
 ### Overleaf
@@ -198,10 +200,11 @@ All references live in `Citations.bib`.
 
 ## Troubleshooting
 
+- If Overleaf times out during compilation, switch to draft mode by changing the first line of `Main.tex` to `\documentclass[draft]{styles}`. Compile once, then remove `[draft]` and compile again in normal mode.
 - References show as question marks: rebuild with `latexmk -C` then `latexmk -pdf -use-biber Main.tex`.
 - Bibliography is empty: confirm `Citations.bib` is in the project root and that you cite at least one entry.
 - A chapter is missing from the table of contents: use `\chapter{...}` (not `\chapter*{...}`).
 
 ## See also
 
-Latex thesis templates provided by other Mizzou alum: Alex Yang and John Hammond.
+Latex thesis templates provided by other Mizzou alum [Alex Yang](https://github.com/aleozlx/latex-thesis-mizzou-2017), [John Hammond](https://github.com/jmhammond/latex-thesis-mizzou).
