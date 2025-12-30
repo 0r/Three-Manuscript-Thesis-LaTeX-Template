@@ -4,7 +4,8 @@ This repository provides a thesis template built on a custom class file, `styles
 
 Most of the template text includes placeholders in `{brackets}`. Replace those with your own content.
 
-<a href="https://github.com/0r/Three-Manuscript-Thesis-LaTeX-Template/raw/main/Three_Manuscript_Thesis_LaTeX_Template.pdf" target="_blank">View the PDF version of the template</a>
+<a href="https://github.com/0r/Three-Manuscript-Thesis-LaTeX-Template/raw/main/Three_Manuscript_Thesis_LaTeX_Template.pdf" target="_blank" rel="noopener noreferrer">View the PDF version of the template</a>
+
 
 ## Quick start
 
