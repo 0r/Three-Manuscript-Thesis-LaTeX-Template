@@ -1,0 +1,266 @@
+\chapter{Title of Second Manuscript}
+\label{chapter:04_manuscript_II}
+
+\section{Chapter Overview}
+This chapter presents a synthesis of research experiments reported in a manuscript... 
+\Blindtext[1]
+
+The manuscript reference is provided below:
+
+\vspace{1em}
+
+\noindent Smith J. A practical framework for reproducible analysis pipelines. Computational Methods Review. 2023;15(1):45-58.
+
+\section{Abstract}
+
+\noindent \Blindtext[1][2]
+\clearpage
+
+\section{Introduction}
+
+\Blindtext[1]
+
+\subsection{Background and Rationale}
+
+\Blindtext[1]
+
+\subsection{Related Work}
+
+\Blindtext[1]
+
+\subsection{Research Objectives}
+
+The goal of this chapter is... :
+
+\begin{enumerate}
+    \item First objective
+    \item Second objective 
+    \item Third objective
+\end{enumerate}
+
+\Blindtext[1]
+
+\subsection{Research Questions}
+
+This chapter addresses the following research questions...:
+
+\begin{enumerate}
+    \item First research question
+    \item Second research question
+    \item Third research question
+\end{enumerate}
+
+The findings of this work aim to...
+\Blindtext[1]
+
+
+\section{Methods}
+
+Explain the design and highlight what is new, as in Figure~\ref{fig:ms2_arch} relative to the first study \citep{smith2021method}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\linewidth]{example-image-b}
+  \caption{Model architecture for Second Manuscript}
+  \label{fig:ms2_arch}
+\end{figure}
+
+Figure~\ref{fig:ms2_tikz_workflow_vertical} illustrates a workflow using the TikZ package.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    font=\small,
+    node distance=9mm and 14mm,
+    >={Stealth[length=2.2mm]},
+    arrow/.style={-Stealth, thick},
+    data/.style={draw, thick, trapezium, trapezium left angle=70, trapezium right angle=110,
+                 fill=gray!15, align=center, inner sep=6pt, minimum width=40mm},
+    proc/.style={draw, thick, rounded corners, fill=blue!10,
+                 align=center, inner sep=6pt, minimum width=40mm},
+    decision/.style={draw, thick, diamond, aspect=2, fill=orange!15,
+                     align=center, inner sep=2pt, minimum width=40mm},
+    box/.style={draw, thick, rounded corners, fill=green!12,
+                align=center, inner sep=6pt, minimum width=40mm},
+    note/.style={draw, cloud callout, callout relative pointer={(0.25,-0.55)},
+                 fill=yellow!20, align=left, inner sep=5pt},
+    scale=0.95, transform shape
+]
+
+% Main vertical flow
+\node[data]     (raw)    {Raw Data\\(CSV, JSON)};
+\node[proc, below=of raw] (clean)  {Clean \&\\Validate};
+\node[proc, below=of clean] (feat) {Feature\\Extraction};
+\node[decision, below=of feat] (qc) {QC\\Pass?};
+\node[box, below=of qc] (model) {Train\\Model};
+\node[proc, below=of model] (eval) {Evaluate};
+\node[box, below=of eval] (report) {Report\\Results};
+
+% Side branch for "no"
+\node[proc, left=18mm of qc] (fix) {Adjust\\Parameters};
+
+% Arrows
+\draw[arrow] (raw) -- (clean);
+\draw[arrow] (clean) -- (feat);
+\draw[arrow] (feat) -- (qc);
+
+\draw[arrow] (qc) -- node[right, font=\scriptsize]{yes} (model);
+\draw[arrow] (model) -- (eval);
+\draw[arrow] (eval) -- (report);
+
+\draw[arrow] (qc.west) -- node[above, font=\scriptsize]{no} (fix.east);
+\draw[arrow] (fix.north) |- (clean.west);
+
+% Straight brace using a fitted node (prevents crooked braces)
+\node[inner sep=0pt, fit=(clean)(feat)(qc)] (prepblock) {};
+\draw[decorate, decoration={brace, amplitude=4pt, mirror}]
+  ($(prepblock.north west)+(-0.4,0.25)$) -- ($(prepblock.south west)+(-0.4,-0.25)$)
+  node[midway, xshift=-12mm, font=\scriptsize, align=center]{Preprocessing\\and QC};
+
+% Fit group for modeling stage
+\node[draw, dashed, inner sep=6pt, fit=(model)(eval),
+      label={[font=\scriptsize]right:Modeling stage}] {};
+
+\end{tikzpicture}
+\caption{Vertical workflow diagram with preprocessing, quality control, and modeling stages.}
+\label{fig:ms2_tikz_workflow_vertical}
+\end{figure}
+
+
+
+
+\section{Results}
+
+Present primary findings first. Defer interpretation to the discussion. Findings can be referenced in tables as in Table~\ref{tab:ms2_ablation}. Placing a large figure using {[hp]} will block it on its own page, such as Figure~\ref{fig:ms2_arch2}. Wide tables can be placed in landscape orientation as with Tables~\ref{tab:ms2_sideways_table}, ~\ref{tab:ms2_sideways_table}.
+
+\subsection{First results subsection}
+
+
+\subsection{Second results subsection}
+
+\subsubsection{Second results subsubsection}
+
+Subsubsections do not appear in the tables of contents. 
+
+\paragraph{Paragraph example}
+
+Paragraph is used for items below the level of subsubsection. 
+
+\refstepcounter{subsubsection}
+\subsubsection{Example of Subsubsection in TOC}
+\addcontentsline{toc}{subsection}
+  {\hspace{2em}\protect\numberline{\thesubsubsection}Example of Subsubsection in TOC}
+
+A subsubsection can be include the table of contents using the above \LaTeX. 
+
+
+\begin{figure}[hp]
+  \centering
+  \includegraphics[width=0.95\linewidth]{example-image-c}
+  \caption{Results figure for Second Manuscript placed with {[hp]} onto its own page.}
+  \label{fig:ms2_arch2}
+\end{figure}
+
+\section{Discussion}
+
+\Blindtext[1]
+
+\section{Conclusion}
+
+\Blindtext[1]
+
+\section*{Conflict of Interest Statement}
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest. 
+
+\section*{Ethics Statement}
+This work involved human subjects or animals in its research. 
+Approval of all ethical and experimental procedures and protocols was granted by the \{University Name\} Institutional Review Board under Application No. 1234567. 
+
+\section*{Funding}
+This work was supported by \{Institution\} through grant \{Grant Number\}. 
+The design of the study and collection, analysis, and interpretation of data are solely the authors' and do not reflect the views of the \{Institution\}. 
+
+\section*{Data Availability Statement}
+The data supporting this study are derived from human subjects and contain sensitive information; therefore, they are not publicly available. 
+
+\clearpage
+
+\section*{Tables}
+
+\begin{table}[H]
+  \centering
+  \caption{Ablation study}
+  \label{tab:ms2_ablation}
+  \begin{tabular}{lrr}
+    \hline
+    Component & Removed & Change in score \\
+    \hline
+    Module X & Yes & $-0.04$ \\
+    Module Y & Yes & $-0.02$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{sidewaystable}[htbp]
+    \centering
+    \fontsize{10pt}{10pt}\selectfont
+    \setlength{\tabcolsep}{2pt}
+    \caption{Example of wide table with landscape page orientation.}
+    \label{tab:ms2_sideways_table}
+    \begin{tabular}{l|ll|lll|lll|l|l}
+        \toprule
+        \multicolumn{1}{c}{\textbf{Subsystem}} &
+        \multicolumn{2}{c}{\cellcolor{gray!25}\textbf{HVAC}} &
+        \multicolumn{3}{c}{\cellcolor{gray!25}\textbf{Lighting}} &
+        \multicolumn{3}{c}{\cellcolor{gray!25}\textbf{Plug Loads}} &
+        \multicolumn{1}{c}{\cellcolor{gray!25}\textbf{Weather}} &
+        \multicolumn{1}{c}{} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-10}
+        \multicolumn{1}{c}{\textbf{Signal}} &
+        Supply Temp & Return Temp &
+        Zone A Lux & Zone B Lux & Exterior Lux &
+        Office W & Lab W & Server W &
+        Humidity &
+        Composite \\
+        \midrule
+        Baseline RMSE  & 1.82 & 1.45 & 22.6 & 18.3 & 25.9 & 0.62 & 0.88 & 1.15 & 6.40 & 78.7 \\
+        Baseline MAE   & 1.31 & 1.06 & 17.4 & 13.9 & 19.8 & 0.45 & 0.63 & 0.81 & 4.92 & 60.3 \\
+        \midrule
+        Final RMSE     & 1.55 & 1.21 & 18.9 & 14.7 & 20.4 & 0.41 & 0.60 & 0.92 & 5.10 & 62.6 \\
+        Final MAE      & 1.12 & 0.89 & 14.6 & 11.3 & 15.8 & 0.30 & 0.44 & 0.66 & 3.92 & 48.9 \\
+        Features ($k$) & 12   & 10   &  8   &  7   &  9   & 14   & 13   & 11   &  6   & 90   \\
+        \midrule
+        Imputation     & Linear & Spline & Median & Median & Linear & Fwd Fill & Linear & Spline & Median & Linear \\
+        \midrule
+        Linear RMSE    & 2.10 & 1.66 & 26.8 & 21.2 & 29.7 & 0.79 & 1.05 & 1.32 & 7.25 & 92.1 \\
+        Linear MAE     & 1.55 & 1.20 & 20.3 & 15.9 & 22.6 & 0.58 & 0.76 & 0.95 & 5.60 & 70.5 \\
+        \bottomrule
+    \end{tabular}
+    
+    \vspace{1cm}
+    
+    \centering
+    \fontsize{10pt}{10pt}\selectfont
+    \setlength{\tabcolsep}{2pt}
+    \caption{Second Example of wide table with landscape page orientation.}
+    \label{tab:ms2_sideways_table2}
+    \begin{tabular}{l|lll|lll|lll|lll}
+        \toprule
+        \multicolumn{1}{c}{} &
+        \multicolumn{3}{c}{\cellcolor{gray!25}\textbf{HVAC}} &
+        \multicolumn{3}{c}{\cellcolor{gray!25}\textbf{Lighting}} &
+        \multicolumn{3}{c}{\cellcolor{gray!25}\textbf{Plug Loads}} &
+        \multicolumn{3}{c}{\cellcolor{gray!25}\textbf{Weather}} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \multicolumn{1}{c}{\textbf{Building}} &
+        Supply Temp & Return Temp & Airflow &
+        Zone A Lux & Zone B Lux & Exterior Lux &
+        Office W & Lab W & Server W &
+        Humidity & Temp Out & Wind \\
+        \midrule
+        B1 & 0.84 & 0.62 & 1.10 & 12.3 & 10.8 & 15.4 & 0.22 & 0.31 & 0.40 & 2.10 & 3.40 & 1.25 \\
+        B2 & 0.45 & 0.51 & 0.78 &  9.6 &  8.9 & 13.1 & 0.35 & 0.44 & 0.55 & 1.65 & 2.95 & 1.10 \\
+        B3 & 1.10 & 0.88 & 1.35 & 14.7 & 12.6 & 16.9 & 0.28 & 0.39 & 0.62 & 2.45 & 3.80 & 1.40 \\
+        \bottomrule
+    \end{tabular}
+\end{sidewaystable}

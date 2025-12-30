@@ -1,0 +1,169 @@
+\chapter{Title of First Manuscript}
+\label{chapter:03_manuscript_I}
+
+\sisetup{
+  separate-uncertainty    = false, 
+  round-mode              = places, 
+  round-precision         = 2, 
+  round-pad               = true, 
+  zero-decimal-to-integer = false, 
+  uncertainty-mode        = full, 
+  detect-weight           = true, 
+  detect-family           = true, 
+  table-number-alignment  = left, 
+  table-text-alignment = left, 
+  parse-numbers = true 
+}
+
+
+\section{Chapter Overview}
+This chapter presents a synthesis of research experiments reported in a manuscript... 
+\Blindtext[1]
+
+The manuscript reference is provided below:
+
+\vspace{1em}
+
+\noindent Smith J, Doe J. An amazing new method. \textit{Journal of Good Results}. 2021;10(2):100-120.
+
+\section{Abstract}
+
+\noindent \Blindtext[1][2]
+\clearpage
+
+\section{Introduction}
+
+\Blindtext[1]
+
+\subsection{Background and Rationale}
+
+\Blindtext[1]
+
+\subsection{Related Work}
+
+\Blindtext[1]
+
+\subsection{Research Objectives}
+
+The goal of this chapter is... :
+
+\begin{enumerate}
+    \item First objective
+    \item Second objective 
+    \item Third objective
+\end{enumerate}
+
+\Blindtext[1]
+
+\subsection{Research Questions}
+
+This chapter addresses the following research questions...:
+
+\begin{enumerate}
+    \item First research question
+    \item Second research question
+    \item Third research question
+\end{enumerate}
+
+The findings of this work aim to...
+\Blindtext[1]
+
+\section{Methods}
+
+Describe data and procedures with enough detail for replication. Define variables and any model choices. Reference citations using \texttt{\textbackslash citep\{\}} as \citep{smith2023framework}. Reference Figures as Figures~\ref{fig:ms1_left}, \ref{fig:ms2_right} or Figure~\ref{fig:ms2_side_by_side}, and place Tables at the end of the manuscript and reference as Tables~\ref{tab:ms1_perf}, \ref{tab:ms1_measurements}.
+
+Equations, such as as Equation~\ref{eq:ms1_L}, do not have captions. Multiple equations can be placed using an \texttt{\textbackslash align} environment, as in Equations~\ref{eq:AE_accuracy}-\ref{eq:AE_roc_auc_ci}.
+
+
+\begin{equation}
+\label{eq:ms1_L}
+\mathcal{L}=\sum_{i=1}^{n}\left(y_i-\hat{y}_i\right)^2
+\end{equation}
+
+\begin{align}
+    \mathrm{Accuracy}\, (\mathrm{Acc})      &= \frac{TP + TN}{TP + TN + FP + FN} \label{eq:AE_accuracy} \\[1ex]
+    \mathrm{Sensitivity}\, (\mathrm{Sn})    &= \frac{TP}{TP + FN} \label{eq:AE_sensitivity} \\[1ex]
+    \mathrm{Specificity}\, (\mathrm{Sp})    &= \frac{TN}{TN + FP} \label{eq:AE_specificity} \\[1ex]
+    \mathrm{F1}                             &= \frac{2 \cdot TP}{2 \cdot TP + FP + FN} \label{eq:AE_f1} \\[1ex]
+    \mathrm{ROC\text{-}AUC}                 &= P\big(a(x_i) < a(x_j) \mid y_i = 0,\, y_j = 1 \big) \label{eq:AE_roc_auc} \\[1ex]
+    \mathrm{ROC\text{-}AUC}\ 95\%\, \mathrm{CI} &= \hat{A} \pm z \cdot \sqrt{\frac{\operatorname{Var}(X) + \operatorname{Var}(Y)}{n_0 \times n_1}} \label{eq:AE_roc_auc_ci}
+\end{align}
+
+\section{Results}
+
+Present primary findings first. Defer interpretation to the discussion.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Left panel}
+    \label{fig:ms1_left}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Right panel}
+    \label{fig:ms2_right}
+  \end{subfigure}
+  \caption{Two related plots of equal width using sample images}
+  \label{fig:ms2_side_by_side}
+\end{figure}
+
+\section{Discussion}
+
+\Blindtext[1]
+
+\section{Conclusion}
+
+\Blindtext[1]
+
+\section*{Conflict of Interest Statement}
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest. 
+
+\section*{Ethics Statement}
+This work involved human subjects or animals in its research. 
+Approval of all ethical and experimental procedures and protocols was granted by the \{University Name\} Institutional Review Board under Application No. 1234567. 
+
+\section*{Funding}
+This work was supported by \{Institution\} through grant \{Grant Number\}. 
+The design of the study and collection, analysis, and interpretation of data are solely the authors' and do not reflect the views of the \{Institution\}. 
+
+\section*{Data Availability Statement}
+The data supporting this study are derived from human subjects and contain sensitive information; therefore, they are not publicly available. 
+
+\clearpage
+
+\section*{Tables}
+
+\begin{table}[H]
+  \centering
+  \caption{Performance across datasets}
+  \label{tab:ms1_perf}
+  \begin{tabular}{lrr}
+    \hline
+    Dataset & Accuracy & F1 \\
+    \hline
+    A & 0.91 & 0.89 \\
+    B & 0.87 & 0.85 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Experimental measurements}
+  \label{tab:ms1_measurements}
+  \begin{tabular}{l
+                  S[table-format=2.2]
+                  S[table-format=3.1]
+                  S[table-format=1.3]}
+  \hline
+  Sample & {Mass (\si{\gram})} & {Length (\si{\milli\meter})} & {Error (\si{\percent})} \\
+  \hline
+  A & 12.45 & 105.3 & 1.23 \\
+  B & 13.20 &  98.7 & 0.87 \\
+  C & 11.75 & 112.4 & 1.05 \\
+  \hline
+  \end{tabular}
+\end{table}

@@ -1,0 +1,39 @@
+% Main.tex
+\documentclass{styles}
+\addbibresource{Citations.bib}
+
+\begin{document}
+% \pagenumbering{roman}
+
+\input{frontmatter/TitlePage}      % uses titlefrontpage inside
+\input{frontmatter/Copyright}      % uncountedfrontpage
+\input{frontmatter/Approval}       % approvalpage  uncounted
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{2}
+\input{frontmatter/Dedication}     % uncountedfrontpage
+\input{frontmatter/Acknowledge}    % frontmatterpage  prints ii
+\input{frontmatter/Contents}
+\input{frontmatter/Abstract}
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\tocChapterHeader
+
+% use placeholder chapters for exporting individual chapters (1-6) as needed
+% \input{chapters/Chapter_00_Placeholder} 
+% \input{chapters/Chapter_00_Placeholder}
+% \input{chapters/Chapter_00_Placeholder}
+% \input{chapters/Chapter_00_Placeholder}
+\input{chapters/Chapter_01_Introduction}
+\input{chapters/Chapter_02_Significance}
+\input{chapters/Chapter_03_First_Manuscript}
+\input{chapters/Chapter_04_Second_Manuscript}
+\input{chapters/Chapter_05_Third_Manuscript} 
+\input{chapters/Chapter_06_Conclusion}
+\input{backmatter/Appendix}
+\printbibliography[heading=bibcenter]
+\input{backmatter/Vita}
+
+\end{document}
